@@ -1,0 +1,22 @@
+<% layout('templates/boilerplate.ejs') -%>
+    <div class="container d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%=statusCode%>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <%=err.message%>
+                </h6>
+                <button class="btn btn-info"><a href="/" class="card-link mb-2">Back to the home page</a></button>
+                <h6 class="card-subtitle mb-2 mt-2">
+                    More Details:
+                </h6>
+                <p class="card-text">
+                    <%=err.stack%>
+                </p>
+
+                <!-- <a href="/campgrounds" class="card-link">List all Campgrounds</a> -->
+            </div>
+        </div>
+    </div>

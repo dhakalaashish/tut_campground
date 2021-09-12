@@ -1,36 +1,66 @@
-//let's continue here!
 <% layout('templates/boilerplate.ejs') -%>
 
     <h1 class="text-center mt-5">Make a new campground</h1>
     <div class="container m-auto mt-5 mb-5 w-50">
-        <form action="/campgrounds" method="POST">
+        <form action="/campgrounds" class="needs-validation" method="POST" novalidate>
             <div class="input-group input-group-lg mb-3">
                 <label class="input-group-text" for="title">Title</label>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-lg" id="title" name="campground[title]">
+                    aria-describedby="inputGroup-sizing-lg" id="title" name="campground[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please do not leave this field empty.
+                </div>
             </div>
             <div class="input-group input-group-lg mb-3">
                 <label class="input-group-text" for="location">Location</label>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-lg" id="location" name="campground[location]">
+                    aria-describedby="inputGroup-sizing-lg" id="location" name="campground[location]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please do not leave this field empty.
+                </div>
             </div>
             <div>
                 <label for="price" class="form-label">Price per night</label>
                 <div class="input-group input-group-lg">
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="price"
-                        name="campground[price]">
+                        name="campground[price]" required>
                     <span class="input-group-text">.00</span>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please do not leave this field empty.
+                    </div>
                 </div>
             </div>
             <div class="input-group input-group-lg mb-3 mt-3">
                 <label class="input-group-text" for="image">Image address</label>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-lg" id="image" name="campground[image]">
+                    aria-describedby="inputGroup-sizing-lg" id="image" name="campground[image]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please do not leave this field empty.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" rows="3" name="campground[description]"></textarea>
+                <textarea class="form-control" id="description" rows="3" name="campground[description]"
+                    required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please do not leave this field empty.
+                </div>
             </div>
             <button type="submit" class="btn btn-success btn-lg">Submit</button>
         </form>
